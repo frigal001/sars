@@ -8,7 +8,7 @@
 #' @noRd
 find_one_threshold_cont <- function(x, y, fct, interval, nisl = NULL){
   if (is.null(nisl)){
-    sequence <- seq(min(x), max(x), interval)
+    sequence <- seq(min(x), max(x) - interval, interval)
     } else {
     n <- nisl-1
     if (n == 0) {n <- 1}
@@ -57,7 +57,7 @@ find_one_threshold_disc <- function(x, y, fct, nisl = NULL){
 find_two_thresholds_cont <- function(x, y, fct, interval, nisl = NULL, parallel, 
                                      cores){
   if (is.null(nisl)){
-    sequence <- seq(min(x), max(x), interval)
+    sequence <- seq(min(x), max(x) - interval, interval)
     } else {
     n <- nisl-1
     if (n == 0) {n <- 1}
